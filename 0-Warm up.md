@@ -160,6 +160,8 @@ ECMAScript = 자바스크립트 표준으로, 프로그래밍 언어의 값, 타
 추가로 제공하는 기능은 호환을 하지 않는다.
 ```
 
+![브라우저와 Node.js환경에서 자바스크립트 용도는 다르다.](https://blog.kakaocdn.net/dn/UZwB6/btrcOONqhNg/sHeVMd4VMk7uzyf6UlXBuk/img.png)
+
 예로 들어, `DOM API`
 
 - 브라우저 → `DOM API를 제공`
