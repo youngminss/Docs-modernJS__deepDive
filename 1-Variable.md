@@ -12,7 +12,7 @@ var result = 10 + 20;
 - 변수에 값을 저장하는 행위 = `할당(Assignment, 대입, 저장)`
 - 변수에 저장된 값을 읽어 들이는 것 = `참조(Reference)`
 
-( 10 + 20 = 30의 메모리 저장 과정 이미지 첨부 ㄱㄱ.. )
+![변수 선언 & 값 대입 - 메모리 구조](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbb5job%2FbtrlyrbOF7F%2FPSQkjJo4Ckwy19cbEcqjdK%2Fimg.png)
 
 ```
 [ 💡 Note ]
@@ -72,7 +72,7 @@ var result = 10 + 20;
 var person; // 변수 선언(= "변수 선언문")
 ```
 
-( 변수 선언문 이미지 첨부 ㄱㄱ.. )
+![변수 선언문 상황 - 메모리 구조](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F4e9yE%2FbtrlyqjGZ2K%2FWQLO9hN5nwtYJxxAKzkH50%2Fimg.png)
 
 - 변수 선언문은 `변수 이름을 등록`하고 `값을 저장할 메모리 공간을 확보`한다.
   - 변수 선언한 이후, 변수에 값은 아직 할당하지 않았다.
