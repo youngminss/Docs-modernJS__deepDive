@@ -72,7 +72,7 @@ var result = 10 + 20;
 var person; // 변수 선언(= "변수 선언문")
 ```
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F4e9yE%2FbtrlyqjGZ2K%2FWQLO9hN5nwtYJxxAKzkH50%2Fimg.png" width="500" height="400">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAhZBK%2FbtrlDAHJEsp%2FnkwHPBPHVl9a2kZOOt3Igk%2Fimg.png" width="500" height="400">
 
 - 변수 선언문은 `변수 이름을 등록`하고 `값을 저장할 메모리 공간을 확보`한다.
   - 변수 선언한 이후, 변수에 값은 아직 할당하지 않았다.
@@ -169,7 +169,7 @@ console.log(person); // YOUNG MIN
 
 - `변수 선언` 과 `값의 할당` 전후 시점 메모리 구조
 
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFPUD1%2FbtrlJMs2NCd%2FGNYlW88TgoybgwQmMIFQI0%2Fimg.png" width="500" height="400">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFPUD1%2FbtrlJMs2NCd%2FGNYlW88TgoybgwQmMIFQI0%2Fimg.png" width="700" height="400">
 
 <br>
 <br>
