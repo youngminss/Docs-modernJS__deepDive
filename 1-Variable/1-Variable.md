@@ -169,7 +169,7 @@ console.log(person); // YOUNG MIN
 
 - `변수 선언` 과 `값의 할당` 전후 시점 메모리 구조
 
-( 이미지 ㄱㄱ.. )
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FFPUD1%2FbtrlJMs2NCd%2FGNYlW88TgoybgwQmMIFQI0%2Fimg.png" width="500" height="400">
 
 <br>
 <br>
@@ -191,6 +191,15 @@ person = "YOUNG MAN"; // 값의 재할당 2️⃣
 
 - 위 예제에서 1번 과정에서, 이미 `변수선언` 과정에서 `undefined` 로 초기화 되어있던 값에서 `값의 할당` 과정에서 `YOUNG MIN` 으로 `재할당` 되었다 볼 수 있다.
 
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbAxbWj%2FbtrlFJjxqx0%2F2MshuA483UYgzDZFH7Xi4K%2Fimg.png" width="700" height="400">
+
+> `var 키워드`로 선언한 변수는 `선언과 동시에 undefined 로 초기화`되므로, 엄밀히 말하자면 `변수에 처음 값을 할당하는 것도 사실은 재할당`
+
+- 위 예제에서 1번 과정에서, 이미 `변수선언` 과정에서 `undefined` 로 초기화 되어있던 값에서 `값의 할당` 과정에서 `YOUNG MIN` 으로 `재할당` 되었다 볼 수 있다.
+- 결과적으로 값의 재할당까지 적용되었을 경우, 이전 값인 `undefined` 나 `YOUNG MIN` 은 어떤 변수도 값으로 갖고 있지 않게 된다.
+- 즉, 어떠한 식별자와도 연결되어 있지 않다는 것이고, 더 이상 필요하지 않다는 것을 의미한다.
+- 이러한 불필요한 값들은 [가비지 콜렉터(Garbage collector)](<https://ko.wikipedia.org/wiki/%EC%93%B0%EB%A0%88%EA%B8%B0_%EC%88%98%EC%A7%91_(%EC%BB%B4%ED%93%A8%ED%84%B0_%EA%B3%BC%ED%95%99)>) 에 의해 `메모리에서 자동 해제` 된다. ( 단, 언제 해제될지는 예측 불가능 )
+
 ```
 [ 🍧 맛보기 - const ]
 
@@ -201,4 +210,39 @@ ES6에서 const 키워드 도입
 + 이 키워드로 선언한 변수는 재할당 금지, 즉 단 한번만 할당할 수 있는 변수 즉, "상수를 표현"
 ```
 
-( const 이미지 ㄱㄱ )
+<br>
+<br>
+
+# 식별자 네이밍 규칙
+
+- 식별자는 특수문자를 제외한 `문자, 숫자, 언더스코어(_), 달러 기호($)` 를 포함 할 수 있다.
+- 단, 식별자는 특수문자를 제외한 `문자, 언더스코어(_), 달러 기호($)` 로 시작해야 한다. (`숫자 시작 X`)
+- [예약어](http://www.w3bai.com/ko/js/js_reserved.html)는 식별자로 사용할 수 없다.
+
+<br>
+
+### 네이밍 컨벤션(Naming Convention)
+
+> 하나 이상의 영단어로 구성된 식별자를 만들 때 `가독성 좋게 단어를 한눈에 구분하기 위해 규정한 명명 규칙`
+
+- 주요 4가지 유형 네이밍 컨벤션
+
+```jsx
+// 카멜 케이스(camelCase)
+var fistMan;
+
+// 스네이크 케이스(snake_case)
+var first_man;
+
+// 파스칼 케이스(PascalCase)
+var FirstMan;
+
+// 헝가리언 케이스(typeHungarianCase)
+var strFirstMan;
+var $elem = document.getElementById("myId");
+var observable$ = fromEvent(document, "click");
+```
+
+- 자바스크립트에서는 일반적으로
+  - `변수` 나 `함수` 이름에는 `카멜 케이스(camelCase)`
+  - `생성자 함수`, `클래스 이름` 에는 `파스칼 케이스(PascalCase)`
