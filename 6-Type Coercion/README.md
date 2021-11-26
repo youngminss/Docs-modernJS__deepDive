@@ -206,9 +206,9 @@ Boolean([]);        // true
 - 단축 평가는 표현식을 평가하는 도중에 평가결과가 확정돈 경우 → 나머지 평가 과정을 생략한다.
 
 | 단축 평가 표현식  | 평가 결과 |
-| ----------------- | --------- | -------- | -------- |
-| true              |           | anything | true     |
-| false             |           | anything | anything |
+| ----------------- | --------- |
+| true ll anything  | true      |
+| false ll anything | anything  |
 | true && anything  | anything  |
 | false && anything | false     |
 
