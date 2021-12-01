@@ -243,6 +243,27 @@ console.log(sub()); // 0
 = 객체가 변경될 수 있기 때문에 "상태 변화 추적"이 어렵다.
 ```
 
+```jsx
+function changeVal(primitive, obj) {
+  primitive += 100;
+  obj.name = "WIEEE";
+}
+
+// 외부 상태
+var num = 100; // 원시 값
+var person = { name: "WI" }; // 객체
+
+console.log(num); // 100
+console.log(person); // { name: 'WI' }
+
+changeVal(num, person);
+
+console.log(num); // 100
+console.log(person); // { name: 'WIEEE' } 💩
+```
+
+![원시 값 전달과 참조 값 전달](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbgAgqP%2FbtrmEi0ScBA%2FwrhIYb7DMZRfh5wWQqoKMK%2Fimg.png)
+
 - 해결 방법 중
   - 객체를 `불변 객체(immutable object)` 로 만들어 사용하는 것
     - 객체의 복사본을 새롭게 생성하는 것은 비용(cost)이 원본 객체 규모에 따라 커질 수 있다.
