@@ -1,6 +1,6 @@
 # 내부 슬롯 & 내부 메서드
 
-[내부 슬롯 & 내부 메서드 Detail](<[https://medium.com/jspoint/what-are-internal-slots-and-internal-methods-in-javascript-f2f0f6b38de](https://medium.com/jspoint/what-are-internal-slots-and-internal-methods-in-javascript-f2f0f6b38de)>)
+[내부 슬롯 & 내부 메서드 Detail](https://medium.com/jspoint/what-are-internal-slots-and-internal-methods-in-javascript-f2f0f6b38de)
 
 - `내부 슬롯 & 내부 메서드` 는 자바스크립트 엔진에서 실제로 동작은 하지만 `개발자가 직접 접근할 수 있도록 외부로 공개된 객체의 프로퍼티는 아니다.`
 - 즉, 자바스크립트 엔진의 `내부 로직` 이므로 자바스크립트로 직접 접근하거나 호출할 수 있는 방법을 제공하진 않는다.
