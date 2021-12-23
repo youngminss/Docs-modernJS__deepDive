@@ -300,3 +300,8 @@ console.log(Object.keys(person)); // [ 'name', 'age' ]
 console.log(Object.values(person)); // [ 'WI', 100 ]
 console.log(Object.entries(person)); // [ [ 'name', 'WI' ], [ 'age', 100 ] ]
 ```
+
+---
+
+- [프로토타입-1](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README.md)
+- [프로토타입-2](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README2.md)

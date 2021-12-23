@@ -340,3 +340,8 @@ Object.setPrototypeOf(me, parent);
 console.log(me.constructor === Person); // false
 console.log(me.constructor === Object); // true
 ```
+
+---
+
+- [프로토타입-1](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README.md)
+- [프로토타입-3](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README3.md)

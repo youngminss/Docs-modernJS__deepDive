@@ -268,3 +268,8 @@ const me = new Person("WI");
 // me 객체의 constructor 프로퍼티(정확히는 me 객체의 프로토타입인 Person.prototype 에 constructor 프로퍼티)
 console.log(me.constructor === Person); // true
 ```
+
+---
+
+- [프로토타입-2](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README2.md)
+- [프로토타입-3](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/16-Prototype/README3.md)
