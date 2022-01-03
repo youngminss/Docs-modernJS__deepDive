@@ -14,21 +14,26 @@
 ### Array.prototype.sort 메서드
 
 - `배열의 요소를 정렬, 정렬된 배열을 반환`
+
   - default 로는 오름차순 정렬이다.
+
   ```jsx
   const fruits = ["Banana", "Orange", "Apple"];
 
   fruits.sort();
   console.log(fruits); // [ 'Apple', 'Banana', 'Orange' ]
   ```
+
 - `mutator method`
 - 기본적인 정렬 순서는 `유니코드 코드 포인트의 순서를 따른다.`
+
   - 배열의 요소들을 정렬 시, `숫자 타입이어도 암묵적으로 문자열 타입으로 변환 후 유니코드 코드 포인트 순서에 따라 정렬`
   - 따라서, 숫자 요소를 정렬 시에는 정렬 순서를 정의하고 `비교 함수(compare function)를 인수로 전달해야 한다.`
   - 비교 함수는 `양수 or 음수 or 0을 반환해야 한다.`
     - `양수` : 비교 함수의 두 번째 인수를 우선 정렬
     - `음수` : 비교 함수의 첫 번째 인수를 우선 정렬
     - `0` : 정렬하지 않음
+
   ```jsx
   const numbers = [40, 100, 1, 5, 2, 25, 10];
 
@@ -38,6 +43,7 @@
   numbers.sort((a, b) => a - b);
   console.log(numbers); // [1, 2, 5, 10, 25, 40, 100]
   ```
+
 - 초기에 sort 메서드는 quicksort 알고리즘을 기반으로 구현되었지만, ES10 이후부터는 `timsort 알고리즘 기반으로 변경`되었다고 한다.
 
 <br />
@@ -54,9 +60,11 @@
   // 요소 값 : 3, 인덱스 : 2, this : 1,2,3
   ```
 - 자신의 내부에서 반복문을 실행
+
   - 즉, 반복문을 추상화한 고차 함수로서 내부에서 반복문을 통해 `자신을 호출한 배열을 순회하면서 수행해야 할 처리를 콜백 함수로 전달받아 반복 호출한다.`
   - `각 배열의 요소에 대해 한 번씩 콜백 함수가 호출된다.`
   - `콜백 함수는 일반 함수로 적용`되기 때문에, `this의 참조는 undefined가 바인딩된다.` ( 고차함수에서는 strict mode 가 반영되기 때문, 아닐 경우 전역 객체를 가리킨다. )
+
   ```jsx
   class Numbers {
     numberArray = [];
@@ -73,7 +81,9 @@
   const numbers = new Numbers();
   numbers.mul([1, 2, 3]);
   ```
+
   - 콜백 함수 내부의 this와 호출한 메서드 내부의 this를 일치시키려면 `화살표 함수나, this로 사용할 객체를 바인딩해야 한다.`
+
   ```jsx
   class Numbers {
     numberArray = [];
@@ -90,9 +100,11 @@
   numbers.mul([1, 2, 3]);
   console.log(numbers.numberArray); // [ 1, 4, 9 ]
   ```
+
 - `accessor method`
 - 반환값은 undefined 다.
 - `forEach 문 내부에서는 break, continue 문을 사용할 수 없다.` 즉, 중간에 순회를 중단할 수 없다.
+
   ```jsx
   [1,2,3].forEach((item, idx) => {
     console.log(item);
@@ -106,6 +118,7 @@
     // SyntaxError: Illegal continue statement: no surrounding iteration statement
   })
   ```
+
 - for 문에 비해 기본적인 성능은 좋지 않지만 `가독성은 좋다.`
   - 따라서, 대용량 데이터를 순회하거나 시간이 많이 걸리는 작업이 아니라면 for문 보단 forEach문을 사용하는 것을 권장
 
@@ -116,6 +129,7 @@
 - `콜백 함수의 반환값들로 구성된 새로운 배열을 반환`
 - `accessor method`
 - 원본 배열의 요소값을 다른 값으로 `매핑(mapping)`한 `새로운 배열을 생성하기 위한 고차 함수`
+
   ```jsx
   const arr = [1, 2, 3];
   const mappingArr = arr.map((item) => Math.pow(item, 2));
@@ -131,6 +145,7 @@
 - `콜백 함수의 반환값이 true인 요소로만 구성된 새로운 배열을 반환`
 - `accessor mehtod`
 - `특정 조건에 맞는 배열의 요소들을 추출할 때 유용하게 사용된다.`
+
   ```jsx
   const arr = [1, 2, 3, 4, 5];
   const filteredArr = arr.filter((item) => item < 4);
@@ -147,10 +162,12 @@
   - 매 차례마다, 콜백 함수의 반환값과 두 번째 요소값을 콜백 함수의 인수로 전달하면서 호출한다.
 - `accessor method`
 - 4개의 매개변수를 가진다.
+
   - `accumulator` : 누적될 값
   - `currentValue` : 현재 조회하는 값
   - `index` : 현재 조회하는 값의 인덱스
   - `array` : 원본 배열 참조(this)
+
   ```jsx
   const arr = [1, 2, 3, 4, 5];
 
@@ -164,8 +181,11 @@
   // 6 4 3 [ 1, 2, 3, 4, 5 ]
   // 10 5 4 [ 1, 2, 3, 4, 5 ]
   ```
+
 - 여러 용도로 사용한다.
+
   - `평균 구하기`
+
   ```jsx
   const arr = [1, 2, 3, 4, 5];
 
@@ -176,7 +196,9 @@
 
   console.log(average); // 3  = (1+2+3+4+5) / 5
   ```
+
   - `최대값 구하기`
+
   ```jsx
   const arr = [1, 2, 3, 4, 5];
 
@@ -186,7 +208,9 @@
   // const max = Math.max(...arr);  // Math.max 를 사용하는 것이 사실 훨씬 더 직관적
   // console.log(max);              // 5
   ```
+
   - `요소의 중복 횟수 구하기`
+
   ```jsx
   const arr = ["banana", "apple", "apple", "orange", "apple"];
 
@@ -197,7 +221,9 @@
 
   console.log(dupArr); // { banana: 1, apple: 3, orange: 1 }
   ```
+
   - `중복 요소 제거`
+
   ```jsx
   const arr = [1, 2, 1, 3, 5, 4, 5, 3, 4, 4];
 
@@ -219,7 +245,9 @@
 
 - 콜백 함수의 반환값이 `단 한 번이라도 참이면 true, 모두 거짓이면 false를 반환`
 - 즉, `배열의 요소 중에 콜백 함수를 통해 정의한 조건을 만족하는 요소가 1개 이상 존재하는지 확인`하여 그 결과를 boolean 타입으로 반환
+
   - 단, `빈 배열인 경우 언제나 false를 반환`
+
   ```jsx
   const odds = [1, 3, 5, 7];
 
@@ -253,7 +281,9 @@
 
 - 콜백 함수의 반환값이 `모두 참이면 true, 단 한 번이라도 거짓이면 false를 반환`
 - 즉, `배열의 모든 요소가 콜백 함수를 통해 정의한 조건을 모두 만족하는지 확인`하여 그 결과를 boolean 타입으로 반환
+
   - 단, `빈 배열인 경우 언제나 true를 반환`
+
   ```jsx
   const odds = [1, 3, 5, 7];
 
@@ -287,7 +317,9 @@
 
 - `ES6에 도입`
 - 자신을 호출한 `배열의 요소를 순회하면서 인수로 전달된 콜백 함수를 호출하여 true를 반환하는 첫 번째 요소를 반환`
+
   - true를 반환하는 요소가 존재하지 않는 경우 `undefined 를 반환`
+
   ```jsx
   const users = [
     {
@@ -318,7 +350,9 @@
 
 - `ES6에 도입`
 - findIndex 메서드는 `콜백 함수에 정의한 조건에 대해 true를 반환하는 요소의 인덱스를 반환`
+
   - true를 반환하는 요소가 존재하지 않는 경우 `-1을 반환`
+
   ```jsx
   const users = [
     {
@@ -349,11 +383,18 @@
 
 - `ES10에 도입`
 - [`Array.prototype.map](http://Array.prototype.map) 메서드를 통해 생성된 배열을 평탄화한다.`
+
   - 즉, map 함수 호출한 결과 → flat 메서드 호출한 결과와 같다.
   - 단, `flat 과정의 깊이를 1로만 적용할 수 있다.`
+
   ```jsx
   const arr = ["hello", "world"];
 
   console.log(arr.map((item) => item.split("")).flat()); // ["h", "e", "l", "l", "o", "w", "o", "r"]
   console.log(arr.flatMap((item) => item.split(""))); // ["h", "e", "l", "l", "o", "w", "o", "r"]
   ```
+
+---
+
+- [자바스크립트 배열](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/24-Array/README.md)
+- [배열 메서드](https://github.com/youngminss/Docs-modernJS__deepDive/blob/master/24-Array/README2.md)
