@@ -69,7 +69,7 @@ console.log(template);
 // 🔎 2️⃣ - 멀티라인 문자열 사용시
 var template = `<ul>
 	<li><a href="#">Home</a></li>
-</ul>;
+</ul>`;
 console.log(template);
 
 ```
@@ -101,9 +101,9 @@ console.log(`My name is ${first} ${last}.`); // My name is YOUNG MIN.
 <br>
 <br>
 
-# 불리언 타입
+# boolean 타입
 
-> 불리언 타입의 값은 논리적 참, 거짓을 나타내는 `true` 와 `false` 뿐이다.
+> boolean 타입의 값은 논리적 참, 거짓을 나타내는 `true` 와 `false` 뿐이다.
 
 <br>
 <br>
