@@ -64,7 +64,7 @@
 
 ```jsx
 // NaN은 자신과 일치하지 않는 유일한 값이다.
-NaN === NaNl; // false
+NaN === NaN; // false
 
 // NaN 인지 조사가 필요시 -> 빌트인 함수 "isNaN(value)"을 사용
 isNaN(NaN); // true
